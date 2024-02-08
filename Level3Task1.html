@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Image Gallery</title>
+  <style>
+    
+    .thumbnail-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .thumbnail {
+      width: 100px;
+      height: 75px;
+      margin: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .enlarged-image {
+      max-width: 80%;
+      max-height: 80%;
+      border: 2px solid white;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      transition: transform 0.3s ease-in-out;
+    }
+
+
+    .thumbnail:hover + .overlay,
+    .overlay:hover {
+      display: flex;
+    }
+
+
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+   
+    .mySlides {
+      display: none;
+    }
+
+   
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      cursor: pointer;
+    }
+
+    
+    .active {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="thumbnail-container">
+  <img src="drop.jpg" class="thumbnail" onclick="openOverlay('overlay1')" alt="Image 1">
+  <img src="drop1.jpg" class="thumbnail" onclick="openOverlay('overlay2')" alt="Image 2">
+  <img src="drop2.jpg" class="thumbnail" onclick="openOverlay('overlay3')" alt="Image 3">
+  <img src="drop3.jpg" class="thumbnail" onclick="openOverlay('overlay4')" alt="Image 4">
+  <img src="drop4.jpg" class="thumbnail" onclick="openOverlay('overlay5')" alt="Image 5">
+  <img src="drop5.jpg" class="thumbnail" onclick="openOverlay('overlay6')" alt="Image 6">
+  <img src="a3.jpg" class="thumbnail" onclick="openOverlay('overlay7')" alt="Image 7">
+  <img src="drop7.jpg" class="thumbnail" onclick="openOverlay('overlay8')" alt="Image 8">
+  <img src="v2.jpg" class="thumbnail" onclick="openOverlay('overlay9')" alt="Image 9">
+  <img src="v1.jpg" class="thumbnail" onclick="openOverlay('overlay10')" alt="Image 10">
+  <img src="a2.jpg" class="thumbnail" onclick="openOverlay('overlay11')" alt="Image 11">
+  <img src="drop11.jpg" class="thumbnail" onclick="openOverlay('overlay12')" alt="Image 12">
+  <img src="f1.jpg" class="thumbnail" onclick="openOverlay('overlay13')" alt="Image 13">
+  <img src="f2.jpg" class="thumbnail" onclick="openOverlay('overlay14')" alt="Image 14">
+  <img src="f3.jpg" class="thumbnail" onclick="openOverlay('overlay15')" alt="Image 15">
+  <img src="f4.jpg" class="thumbnail" onclick="openOverlay('overlay16')" alt="Image 16">
+  <img src="a1.jpg" class="thumbnail" onclick="openOverlay('overlay17')" alt="Image 17">
+ 
+</div>
+
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay1')">
+  <img src="drop.jpg" class="enlarged-image" alt="Enlarged Image 1">
+</div>
+
+<div id="overlay2" class="overlay" onclick="closeOverlay('overlay2')">
+  <img src="drop1.jpg" class="enlarged-image" alt="Enlarged Image 2">
+</div>
+
+<div id="overlay3" class="overlay" onclick="closeOverlay('overlay3')">
+  <img src="drop2.jpg" class="enlarged-image" alt="Enlarged Image 3">
+</div>
+
+<div id="overlay3" class="overlay" onclick="closeOverlay('overlay4')">
+  <img src="drop3.jpg" class="enlarged-image" alt="Enlarged Image 4">
+</div>
+
+<div id="overlay3" class="overlay" onclick="closeOverlay('overlay5')">
+  <img src="drop4.jpg" class="enlarged-image" alt="Enlarged Image 5">
+</div>
+
+<div id="overlay3" class="overlay" onclick="closeOverlay('overlay6')">
+  <img src="drop5.jpg" class="enlarged-image" alt="Enlarged Image 6">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay7')">
+  <img src="a3.jpg" class="enlarged-image" alt="Enlarged Image 7">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay8')">
+  <img src="drop7.jpg" class="enlarged-image" alt="Enlarged Image 8">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay9')">
+  <img src="v2.jpg" class="enlarged-image" alt="Enlarged Image 9">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay10')">
+  <img src="v1.jpg" class="enlarged-image" alt="Enlarged Image 10">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay11')">
+  <img src="a2.jpg" class="enlarged-image" alt="Enlarged Image 11">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay12')">
+  <img src="drop11.jpg" class="enlarged-image" alt="Enlarged Image 12">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay13')">
+  <img src="f1.jpg" class="enlarged-image" alt="Enlarged Image 13">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay14')">
+  <img src="f2.jpg" class="enlarged-image" alt="Enlarged Image 14">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay15')">
+  <img src="f3.jpg" class="enlarged-image" alt="Enlarged Image 15">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay16')">
+  <img src="f4.jpg" class="enlarged-image" alt="Enlarged Image 16">
+</div>
+
+<div id="overlay1" class="overlay" onclick="closeOverlay('overlay17')">
+  <img src="a1.jpg" class="enlarged-image" alt="Enlarged Image 17">
+</div>
+
+
+
+<div class="slideshow-container">
+  <div class="mySlides">
+    <img src="drop.jpg" style="width:100%" alt="Image 1">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop1.jpg" style="width:100%" alt="Image 2">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop2.jpg" style="width:100%" alt="Image 3">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop3.jpg" style="width:100%" alt="Image 4">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop4.jpg" style="width:100%" alt="Image 5">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop5.jpg" style="width:100%" alt="Image 6">
+  </div>
+
+  <div class="mySlides">
+    <img src="a3.jpg" style="width:100%" alt="Image 7">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop7.jpg" style="width:100%" alt="Image 8">
+  </div>
+
+  <div class="mySlides">
+    <img src="v2.jpg" style="width:100%" alt="Image 9">
+  </div>
+
+  <div class="mySlides">
+    <img src="v1.jpg" style="width:100%" alt="Image 10">
+  </div>
+
+  <div class="mySlides">
+    <img src="a2.jpg" style="width:100%" alt="Image 11">
+  </div>
+
+  <div class="mySlides">
+    <img src="drop11.jpg" style="width:100%" alt="Image 12">
+  </div>
+
+  <div class="mySlides">
+    <img src="f1.jpg" style="width:100%" alt="Image 13">
+  </div>
+
+  <div class="mySlides">
+    <img src="f2.jpg" style="width:100%" alt="Image 14">
+  </div>
+
+  <div class="mySlides">
+    <img src="f3.jpg" style="width:100%" alt="Image 15">
+  </div>
+
+  <div class="mySlides">
+    <img src="f4.jpg" style="width:100%" alt="Image 16">
+  </div>
+
+  <div class="mySlides">
+    <img src="a1.jpg" style="width:100%" alt="Image 17">
+  </div>
+
+  <script>
+    
+    function openOverlay(overlayId) {
+      document.getElementById(overlayId).style.display = "flex";
+    }
+  
+    function closeOverlay(overlayId) {
+      document.getElementById(overlayId).style.display = "none";
+    }
+  </script>
+  
+  
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    
+   
+  </div>
+</div>
+ 
+  <script>
+    
+    let currentSlideIndex = 0;
+    let slideshowTimer;
+
+    function openOverlay(overlayId, slideIndex) {
+      document.getElementById(overlayId).style.display = "flex";
+      currentSlideIndex = slideIndex;
+      showSlides();
+    }
+
+    function closeOverlay(overlayId) {
+      document.getElementById(overlayId).style.display = "none";
+      startSlideshow(); 
+    }
+
+   
+    startSlideshow(); 
+
+    function startSlideshow() {
+      slideshowTimer = setTimeout(nextSlide, 2000);
+    }
+
+    function nextSlide() {
+      let slides = document.getElementsByClassName("mySlides");
+
+      
+      currentSlideIndex++;
+      if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+      }
+
+      showSlides();
+    }
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+     
+      slides[currentSlideIndex].style.display = "block";
+
+      
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      dots[currentSlideIndex].className += " active";
+
+
+      startSlideshow();
+    }
+  </script>
+
+</body>
+</html>

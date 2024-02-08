@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .Calculator {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+        }
+
+        section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+
+        }
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        button {
+            background-color: #54ccdc;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 50%;
+
+        }
+
+        button:hover {
+            background-color: #e68f60;
+        }
+    </style>
+    <h2> Simple Calculator</h2>
+
+    <div class="Calculator">
+        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+            Date and Time.</button>
+        <p id="demo"></p>
+
+        <div id="calculator">
+            <input type="text" id="result" disabled>
+            <br>
+            <input type="button" value="7" onclick="appendToResult('7')">
+            <input type="button" value="8" onclick="appendToResult('8')">
+            <input type="button" value="9" onclick="appendToResult('9')">
+            <input type="button" value="0" onclick="appendToResult('0')">
+
+            <br>
+            <input type="button" value="4" onclick="appendToResult('4')">
+            <input type="button" value="5" onclick="appendToResult('5')">
+            <input type="button" value="6" onclick="appendToResult('6')">
+            <input type="button" value="=" onclick="calculateResult()">
+            <br>
+            <input type="button" value="1" onclick="appendToResult('1')">
+            <input type="button" value="2" onclick="appendToResult('2')">
+            <input type="button" value="3" onclick="appendToResult('3')">
+            <input type="button" value="+" onclick="appendToResult('+')">
+            <br>
+
+        </div>
+
+        <script>
+            function appendToResult(value) {
+                document.getElementById('result').value += value;
+            }
+
+            function clearResult() {
+                document.getElementById('result').value = '';
+            }
+
+            function calculateResult() {
+                try {
+                    document.getElementById('result').value = eval(document.getElementById('result').value);
+                } catch (error) {
+                    document.getElementById('result').value = 'Error';
+                }
+            }
+            function calculateSquareRoot() {
+                try {
+                    document.getElementById('result').value = Math.sqrt(eval(document.getElementById('result').value));
+                } catch (error) {
+                    document.getElementById('result').value = 'Error';
+                }
+            }
+
+        </script>
+        <button id="btn">Color</button>
+
+        <script src="index.js"></script>
+
+        </script>
+</body>
+
+</html>
